@@ -1,23 +1,58 @@
 <!DOCTYPE html>
 <html en="lang">
+
 <head>
     <meta charset="UTF-8">
     <!-- DONT FORGET TO CHANGE TITLE-->
     <title>Title goes here</title>
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/css/paper-bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap-theme.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
+
 <body>
-    <!-- YOUR BODY GOES HERE -->
-    <!-- THIS BOILERPLATE HAS BOOTSTRAP, BOOTRSTRAP THEME (FROM BOOTSWATCH.COM), JQUERY & JQUERY UI IMPORTED. -->
-    <!-- Import custom jquery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <div class="page-header">
+        <h1 class="text-center">gifTastic </h1>
+    </div>
+    <div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-md-offset-0 col-sm-4 col-xs-12" id="searchContainer">
+                    <h5 class="text-primary">enter text below to create a button for searching gif's</h5>
+                    <input type="search" placeholder="enter text here" id="searchInput">
+                    <button class="btn btn-primary" type="submit" id="submitBtn">submit </button>
+                    <h5 class="text-primary">select response size</h5>
+                    <select>
+                        <option value="1" selected="">1</option>
+                        <option value="5">5</option>
+                        <option value="10" selected="">10</option>
+                    </select>
+                </div>
+                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12" id="buttonContainer">
+                    <h5 class="text-primary">click on the button to load gif's</h5>
+                    <button class="btn btn-default .custom-btn" type="button">Button1 </button>
+                </div>
+            </div>
+            <hr>
+            <div class="row" id="resultsContainer" style="/*margin-top:15px;*/">
+                <div class="col-lg-3 col-md-4 col-sm-4 col-xs-6 .gif-container">
+                    <div class="thumbnail"><img src="http://media0.giphy.com/media/op7uqYWBm3R04/200.gif">
+                        <div class="caption">
+                            <h5>Rating: </h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!-- Import jquery ui (optional) -->
     <!-- <script src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script> -->
     <!-- Import custom js -->
     <script src="assets/javascript/script.js"></script>
 </body>
+
 </html>

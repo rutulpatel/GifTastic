@@ -1,0 +1,8 @@
+button {
+    margin: 5px;
+}
+
+div#searchContainer.col-lg-4.col-md-4.col-md-offset-0.col-sm-4.col-xs-12 {
+    /*border-left:3px;*/
+    border-right: 1px dotted;
+}
