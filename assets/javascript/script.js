@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    var buttonArr = ["rabbit", "penguin", "dog", "cat"];
+    var buttonArr = ["dog", "funny cat", "family guy", "game of thrones", "trump", "horrible bosses", "simpsons"];
     var respLimit = 10;
 
     $("select").on('change', function() {
