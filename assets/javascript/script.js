@@ -20,10 +20,10 @@ $(document).ready(function() {
         }
     }
 
-    function addGif(rating, url) {
+    function addGif(rating, url, height) {
         var divEle = $("<div>").attr({ "class": "col-lg-3 col-md-4 col-sm-4 col-xs-6 .gif-container" });
         var thumbNail = $("<div>").attr({ "class": "thumbnail" });
-        var imgEle = $("<img>").attr({ "src": url });
+        var imgEle = $("<img>").attr({ "src": url }).css("height", height);
         var caption = $("<div>").attr({ "class": "caption" });
         var rating = $("<h5>").text("Rating: " + rating);
         caption.html(rating);
@@ -43,9 +43,10 @@ $(document).ready(function() {
         }).done(function(response) {
             var data = response.data;
             for (var i = 0; i < data.length; i++) {
-                console.log(data[i].rating);
-                console.log(data[i].images.fixed_height.url);
-                addGif(data[i].rating, data[i].images.fixed_height.url);
+                console.log(data[i]);
+                //console.log(data[i].rating);
+                //console.log(data[i].images.fixed_height.url);
+                addGif(data[i].rating, data[i].images.fixed_height.url, data[i].images.fixed_height.height);
             }
         });
     }
