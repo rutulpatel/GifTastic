@@ -1,6 +1,5 @@
 $(document).ready(function() {
     var buttonArr = ["rabbit", "penguin", "dog", "cat"];
-    var imgArr = [];
     var respLimit = 10;
 
     $("select").on('change', function() {
@@ -21,7 +20,7 @@ $(document).ready(function() {
     }
 
     function addGif(rating, url, height) {
-        var divEle = $("<div>").attr({ "class": "col-lg-3 col-md-4 col-sm-4 col-xs-6 .gif-container" });
+        var divEle = $("<div>").attr({ "class": "col-lg-3 col-md-4 col-sm-4 col-xs-6 gif-container" });
         var thumbNail = $("<div>").attr({ "class": "thumbnail" });
         var imgEle = $("<img>").attr({ "src": url }).css("height", height);
         var caption = $("<div>").attr({ "class": "caption" });
@@ -30,6 +29,16 @@ $(document).ready(function() {
         thumbNail.append(imgEle).append(caption);
         divEle.html(thumbNail);
         $("#resultsContainer").append(divEle);
+    }
+
+    function startStopAnimation() {
+        var url = "" + $(this).attr("src");
+        if (url.match(/_s.gif$/)) {
+            url = url.replace("_s.gif", ".gif");
+        } else {
+            url = url.replace(".gif", "_s.gif");
+        }
+        $(this).attr("src", url);
     }
 
     function makeAPICall() {
@@ -43,15 +52,10 @@ $(document).ready(function() {
         }).done(function(response) {
             var data = response.data;
             for (var i = 0; i < data.length; i++) {
-                console.log(data[i]);
-                //console.log(data[i].rating);
-                //console.log(data[i].images.fixed_height.url);
                 addGif(data[i].rating, data[i].images.fixed_height.url, data[i].images.fixed_height.height);
             }
         });
     }
-
-
 
     $("#submitBtn").on("click", function() {
         addButton($("#searchInput").val());
@@ -59,6 +63,6 @@ $(document).ready(function() {
     });
 
     addButton("", true);
-
     $(document).on("click", ".custom-btn", makeAPICall);
+    $(document).on("click", "img", startStopAnimation);
 });
