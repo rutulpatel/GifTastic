@@ -4,7 +4,6 @@ $(document).ready(function() {
 
     $("select").on('change', function() {
         respLimit = this.value;
-        console.log(respLimit);
     });
 
     function addButton(val, all = false) {
